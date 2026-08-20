@@ -1,22 +1,17 @@
-import psycopg2
+# dsa practice 1929
 
-from psycopg2.extras import RealDictCursor
+def getConcatenation(nums : list):
+    numbers = nums.copy()
+    for i in nums:
+        numbers.append(i)
+    return numbers
+print(getConcatenation([1,2,1]))
 
-DB_SETTINGS = {
-    'host' : 'localhost',
-    'database' : 'fipkart_db',
-    'user' : 'postgres',
-    'password' : 123456789,
-    'port' : 5432
-}
-print('conecting......')
-connection = psycopg2.connect(**DB_SETTINGS)
-cursor = connection.cursor(cursor_factory = RealDictCursor)
-print('connected !!!')
+# dsa 29
 
-query = 'SELECT * FROM flipcart LIMIT 3'
-cursor.execute(query)
+def drop(num):
+    numbers = set(num)
+    nums = list(numbers)
+    return len(nums)
 
-rows = cursor.fetchall()
-a = rows[0]
-print(type(a))
+print(drop([1,1,2]))
