@@ -14,7 +14,8 @@ x = df.drop(columns=['price'])
 
 y = df['price']
 
-model = Perceptron()
+print('started ..')
+model = Perceptron(max_iter=10000000)
 model.fit(x,y)
 
 df = pd.DataFrame({
