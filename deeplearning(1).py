@@ -24,4 +24,3 @@ df = pd.DataFrame({
 })
 
 print(model.predict(df))
-
