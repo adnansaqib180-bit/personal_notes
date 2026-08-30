@@ -53,7 +53,10 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-
+# in this project we are getting upto 
+# ===> 97.74% accuracy 
+# ===> 97.34% recall 
+# ===> 97.23% f1 
 
 
 
