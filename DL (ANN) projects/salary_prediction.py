@@ -2,7 +2,7 @@ import pandas as pd
 from keras import Sequential
 from keras.layers import Dense
 import matplotlib.pylab as plt
-from sklearn.metrics import accuracy_score,r2_score
+from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 import warnings
 warnings.filterwarnings("ignore")
@@ -30,26 +30,24 @@ y = df['MonthlyIncome']
 X_train, X_test, y_train, y_test = train_test_split( x, y, test_size=0.33, random_state=42)
 
 model = Sequential()
-model.add(Dense(128,activation='relu',input_dim= len(df.columns)))
+model.add(Dense(256,activation='relu',input_dim= 40))
 model.add(Dense(64,activation='relu'))
-model.add(Dense(16,activation='relu'))
+model.add(Dense(128,activation='relu'))
+model.add(Dense(32,activation='relu'))
 model.add(Dense(1,activation='linear'))
 
 print(model.summary())
 
-model.compile(optimizer='Adam',loss='mse',metrics=['accuary'])
+model.compile(optimizer='Adam',loss='mse',metrics=['mae'])
 
 history = model.fit(X_train,y_train,epochs=3,validation_split = .24)
 
 predictions = model.predict(X_test)
-
-print("Accuracy Score:", accuracy_score(y_test, predictions))
 print("r2 Score:", r2_score(y_test, predictions))
 
 
 plt.figure(figsize=(10, 4))
 plt.subplot(1, 2, 1)
-plt.plot(history.history["loss"], label="Train Loss")
 plt.plot(history.history["val_loss"], label="Validation Loss")
 plt.title("Model Loss")
 plt.ylabel("Loss")
@@ -65,10 +63,3 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
-
-
-
-
-
-
-
