@@ -1,0 +1,8 @@
+Personal Notes:
+ Deep Learning PracticeA streamlined repository dedicated to practicing and mastering Artificial Neural Network (ANN) concepts using TensorFlow and Keras.
+🎯 Repository Goal: 
+The primary objective of this repository is to build intuition for foundational neural networks through hands-on coding and experimentation.
+🧠 Concepts CoveredANN Foundations:
+ Perceptrons, forward propagation, and backpropagation.Activation Functions: ReLU, Sigmoid, Softmax, and Tanh.Optimization & Loss: Gradient Descent, Adam, Cross-Entropy, and MSE.Model Tuning: Regularization, Dropout, and Batch Normalization.
+🛠️ Tech : 
+ StackPython 3TensorFlow 2.xKerasJupyter Notebooks
