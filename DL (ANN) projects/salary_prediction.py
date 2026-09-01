@@ -40,7 +40,7 @@ print(model.summary())
 
 model.compile(optimizer='Adam',loss='mse',metrics=['mae'])
 
-history = model.fit(X_train,y_train,epochs=3,validation_split = .24)
+history = model.fit(X_train,y_train,epochs=500,validation_split = .24)
 
 predictions = model.predict(X_test)
 print("r2 Score:", r2_score(y_test, predictions))
@@ -54,8 +54,8 @@ plt.ylabel("Loss")
 plt.xlabel("Epoch")
 plt.legend()
 plt.subplot(1, 2, 2)
-plt.plot(history.history["mse"], label="Train Accuracy")
-plt.plot(history.history["val_mse"], label="Validation Accuracy")
+plt.plot(history.history["mae"], label="Train Accuracy")
+plt.plot(history.history["val_mae"], label="Validation Accuracy")
 plt.title("Model Accuracy")
 plt.ylabel("Accuracy")
 plt.xlabel("Epoch")
@@ -63,3 +63,5 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
+# prety good 93% r2 score
