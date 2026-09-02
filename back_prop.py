@@ -2,29 +2,24 @@ import numpy as np
 import pandas as pd 
 
 data = {
-    'sqft' : [1000, 1500, 2000, 2500, 3000],
-    'price' : [200000, 250000, 300000, 350000, 400000]
+    'sqft' : [1000],
+    'price' : [200000]
 }
-df = pd.DataFrame(data)
+df= pd.DataFrame(data)
 x = df['sqft']
 y = df['price']
+def model(g,act):
+    w = 1
+    b = 1
+    for _ in range(20):
 
-def model(x, y):
-    w = 0.1  
-    b = 0.1
-    learning_rate = 0.0000001
-    for single_x, single_y in zip(x, y):
-        
-        y_ht = w * single_x + b
-        
-        loss = (single_y - y_ht) ** 2
-        
-        dj_dw = -2 * single_x * (single_y - y_ht)
-        dj_db = -2 * (single_y - y_ht)
-        
-        w = w - (learning_rate * dj_dw)
-        b = b - (learning_rate * dj_db)
-        
-        print(f"Sqft: {single_x} | Actual Price: {single_y} | Predicted: {y_ht:.2f} | Loss: {loss:.2f}")
-
-model(x, y)
+        for x in g:
+            y_ht = w*x + b
+            for y in act:
+                loss = (y-y_ht)**2
+                w = w-(0.00001)*(-2*(y-y_ht)*(x))
+                b = b-(0.00001)*(-2*(y-y_ht)*(x))
+            print('l',loss)
+            print('y',y,'p',y_ht)
+            print(w,b)
+model(x,y)
