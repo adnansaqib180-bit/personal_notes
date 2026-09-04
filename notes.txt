@@ -1,0 +1,19 @@
+Todays lesson was about Gradient decent and memoization 
+
+==> Memoization :
+memoization is the smart of saving already calculated values of any equation or variable 
+to reuse it to avoide calculating same thing repeatiedly .
+in deeep learning while calculating all the baise and weight of model we save the already calculated values of weights an baisefor furture use .
+it boost up the traing time and help to train the model fast.
+
+===> Gradient Desect :
+it the way ot tevhniwue to update the weight and baise of our model. it uses the concept of derivative to 
+calculate the slop and help in reaching the global minimum of and reduce the loss as small as possible 
+
+it has three types :
+1 := Batch 
+2 := Mini Batch
+3 := scoictic 
+
+1: 
+it is the 
