@@ -1,4 +1,4 @@
-Todays lesson was about Gradient decent and memoization 
+Todays lesson was about Gradient decent and memoization and Vanishing gradient decent 
 
 ==> Memoization :
 memoization is the smart of saving already calculated values of any equation or variable 
@@ -16,4 +16,30 @@ it has three types :
 3 := scoictic 
 
 1: 
-it is the 
+it is the way where we calculate the loss of whole data as average loss and update the 
+weight and  baise at a time it is equal to the number of epochs it is faster in traing 
+but the reult might not impressive 
+it can also stuch in the local minumas which result to poor performance of the model 
+
+2:
+it is the way where we devide our data into diffrent part and calculate loss for every 
+parts and then update the values of rou weight and  baise 
+it has slighitly good chnace to not stuck in local minimas due to greater number of calculations 
+training will be littlebit slower but reults will be more 
+impressive it is most widely used technique 
+
+3:
+it is the way where we calculate loss for every single rows in data and update w and baise 
+each time it will take alot of time in traing and can give impressive reluts 
+
+=== Vanishing Gradient Desect:
+
+it the phenomenon accur when a model is very deep due to deepness there are alot
+ of wight and when the small weight combine th evetulay became more smaller untill 
+ they have zero imapct on the loss as a result model performance cannot be improved 
+it moslt accur when fuction is sigmoid 
+
+several techniques to solve this :
+= use diffrent fuction suc as relu 
+= simplify your model as less layesr as possible 
+
