@@ -73,4 +73,24 @@ Early Stoping :==
 Minimum change in the monitored quantity to qualify as an improvement, 
 i.e. an absolute change of less than min_delta, will count as no improvement.
 
+= Drop Outs :
+it basically means removing some of you nodes from specific layers of you nural
+network if it is applied than the model will not focus on any of single value 
+mean weight and baise in the model and your model will not memorizee the training 
+data it will capture the concept and patterns in your data . Drop outs are 
+used to prevent overfitting 
+tips to apply := 
+    first try o last hidden layers if out put 
+    isnt that good than move on and apply to other layers 
+    adjust the p higher  value if its overfitting and lower the p val 
+    if it is underfitting 
+
+draw backs :
+ mathmetical calculations became more complex ont the gradient decent 
+ due to the change in loss fuction 
+ traing time increases int he model 
+
+ code ==:
+    model.add(128,activation = 'relu')
+    Dropout(p=0.2)
 
