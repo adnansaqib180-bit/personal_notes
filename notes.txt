@@ -69,4 +69,8 @@ Early Stoping :==
     restore_best_weights=False,
     start_from_epoch=0,
 )
+ min_delta :=
+Minimum change in the monitored quantity to qualify as an improvement, 
+i.e. an absolute change of less than min_delta, will count as no improvement.
+
 
