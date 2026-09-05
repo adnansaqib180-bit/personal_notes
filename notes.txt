@@ -43,3 +43,30 @@ several techniques to solve this :
 = use diffrent fuction suc as relu 
 = simplify your model as less layesr as possible 
 
+Todays Topic is about how to reduce Overfitting in DL:
+
+there are several methods including :
+= scaling your data 
+= reducing modelss complexity
+= using regulization techniques 
+= early stoping technique 
+= Drop outs 
+
+Scaling :=
+    it means scalling the input data in specific range it is performed 
+    using the standard scaler from the sklearn
+
+Early Stoping :==
+    it bacically means that while traing you model stop the traing at the
+    specific point where the model start Overfitting
+    keras.callbacks.EarlyStopping(
+    monitor="val_loss",
+    min_delta=0,
+    patience=0,
+    verbose=0,
+    mode="auto",
+    baseline=None,
+    restore_best_weights=False,
+    start_from_epoch=0,
+)
+
