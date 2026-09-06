@@ -96,4 +96,20 @@ draw backs :
 
 
 - todays topic == regularization  :
-    
+    it is a technique to reduce overfitting it is basically a 
+    panelty term which is aded to the loss fuction e.g:
+    loss = (y-y^) + lambda/2n (all weights)^2 == l2 reg
+    loss = (y-y^) + lambda/2n (all weights) == l2 reg
+
+    it reduce to the value of you weights and also reduce overfitting but 
+    it depends on the value of lambda if it is very low it has low effect and overfitting remain 
+    the same and if it is very higher the model willl become very basic 
+    it is a hyperparameter which you can tune 
+
+    the main diffrence between the l1 and l2 reg is that weights become 0 in some 
+    cases if you use l1 but weght will not become 0 in l2 regularization
+
+    code :
+        model.add(128,activation = 'relu',kernal_regulizar=keras.regulizers.l2 or l1 (
+            lambda = 0.003
+        ))
