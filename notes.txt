@@ -94,3 +94,6 @@ draw backs :
     model.add(128,activation = 'relu')
     Dropout(p=0.2)
 
+
+- todays topic == regularization  :
+    
