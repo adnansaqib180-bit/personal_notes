@@ -37,7 +37,7 @@ each time it will take alot of time in traing and can give impressive reluts
 it the phenomenon accur when a model is very deep due to deepness there are alot
  of wight and when the small weight combine th evetulay became more smaller untill 
  they have zero imapct on the loss as a result model performance cannot be improved 
-it moslt accur when fuction is sigmoid 
+it moslt accur when fuction is sigmoid or tanh
 
 several techniques to solve this :
 = use diffrent fuction suc as relu 
@@ -46,7 +46,7 @@ several techniques to solve this :
 Todays Topic is about how to reduce Overfitting in DL:
 
 there are several methods including :
-= scaling your data 
+= scaling your data giving more data
 = reducing modelss complexity
 = using regulization techniques 
 = early stoping technique 
@@ -126,5 +126,16 @@ new topic is weight initialization :
     act like a single nuron even if they are in millions and you model could not 
     recognize any patterns exept liniers 
 
+
+    = random initializatoins :
+    initializing ver small  random weights :
+    if uou do this this will cause Vanishing gradient problem in deep network .
+    smaal random wehts cause this prolem in sigmoid and tanh cuz they squish it 
+
+    = donot initialize with very large numbers of random it wiill cause 
+    very unstable traing in gradient means you gradient will take very large steps 
+    in the graph and traing willbe unstalble at the end due hight fluctuation 
+    you cannot converge ointo the correct sollutions .
+
 - correct way to initialize weights:
-    =
+
