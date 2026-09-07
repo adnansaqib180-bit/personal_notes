@@ -113,3 +113,18 @@ draw backs :
         model.add(128,activation = 'relu',kernal_regulizar=keras.regulizers.l2 or l1 (
             lambda = 0.003
         ))
+
+new topic is weight initialization :
+
+- what not to do :
+    do not initializ all of your weights = 0 cuz in result you model will stuck
+    in the zero and cannot update any of your weights because as we know 
+    tha when anything mul or div with zero became zero 
+    do not initializ your all  weght = a constant number like any number 1 -inf
+    if you do this while backpropagation the weights of a node will update 
+    same and by goning to next layers it all of the nurons in next layers 
+    act like a single nuron even if they are in millions and you model could not 
+    recognize any patterns exept liniers 
+
+- correct way to initialize weights:
+    =
