@@ -138,4 +138,11 @@ new topic is weight initialization :
     you cannot converge ointo the correct sollutions .
 
 - correct way to initialize weights:
+we have to initialize weghts according to the xavier technique where we selelect
+weght and multiply it by 1 over its varience so if the inputs are too much so weights 
+will be smaller and if the input are few the weights will become larger 
+
+formula :
+w = np.random.randn(shape of x (2,2)) * 1/n **1/2 means root of 1/network
+where n is the total number of inputs 
 
