@@ -143,6 +143,21 @@ weght and multiply it by 1 over its varience so if the inputs are too much so we
 will be smaller and if the input are few the weights will become larger 
 
 formula :
-w = np.random.randn(shape of x (2,2)) * 1/n **1/2 means root of 1/network
+w = np.random.randn(shape of x (2,2)) * 1/n **1/2 means root of 1/n
 where n is the total number of inputs 
 
+batch normalization :
+ internal coverient shift :
+ it is the prblem ehere a model learn about any thing and its is performing 
+ good but if we chane the distriution of the inputs we have to to retrain the model 
+ example :
+ when we train our nural net on only red roses it will identify the rose 
+ but if we give it diffrent color of roses in testing it will not perform good
+  
+the problrm :
+    due constant weht shifting the nural could loss information and perform not well
+    to esure this batchnnormalization was intoriduced 
+sol:
+    it is the tchnique where every output from any layer is standerized meaning the 
+    standart deviation is 0 and variance is 1 this will help in fast traingn 
+    of a model and perform well 
