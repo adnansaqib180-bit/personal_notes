@@ -69,4 +69,8 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-# prety good 93% r2 score
+# before hptuning :=>prety good 93% r2 score
+# after tunung :=> not impressed got 53% of r2 score but loss was continuously 
+# decreasing and mae was also decreasing so i think
+#  i need to train for more epochs and also i can try to change 
+# the activation function and optimizer to see if it improves the performance of the model
