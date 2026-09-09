@@ -32,38 +32,41 @@ X_train, X_test, y_train, y_test = train_test_split( x, y, test_size=0.33, rando
 
 def build_model(hp):
     model = Sequential()
-    nodes = hp.int(32,256,steps=32)
-    activ = hp.choice('activation',values=['relu','sigmoid'])
+    nodes = hp.Int('nodes', min_value=32, max_value=256, step=32)
+    activ = hp.Choice('activation',values=['relu','sigmoid'])
     model.add(Dense(units=nodes,activation=activ))
-    optimizer = hp.choice('optimizer',values=['adam','sgd'])
-    model.compile(optimizer= optimizer,loss='binary_crossentropy',matrix)
+    optimizer = hp.Choice('optimizer',values=['adam','sgd'])
+    model.compile(optimizer= optimizer,loss='binary_crossentropy',metrics=['accuracy'])
+    return model
+tuner = kt.RandomSearch(build_model,objective='val_accuracy',max_trials=3)
+tuner.search(X_train,y_train,epochs=10,validation_data=(X_test,y_test))
 
-print(model.summary())
+# print(model.summary())
 
-model.compile(optimizer='Adam',loss='mse',metrics=['mae'])
+# model.compile(optimizer='Adam',loss='mse',metrics=['mae'])
 
-history = model.fit(X_train,y_train,epochs=500,validation_split = .24)
+# history = model.fit(X_train,y_train,epochs=500,validation_split = .24)
 
-predictions = model.predict(X_test)
-print("r2 Score:", r2_score(y_test, predictions))
+# predictions = model.predict(X_test)
+# print("r2 Score:", r2_score(y_test, predictions))
 
 
-plt.figure(figsize=(10, 4))
-plt.subplot(1, 2, 1)
-plt.plot(history.history["val_loss"], label="Validation Loss")
-plt.title("Model Loss")
-plt.ylabel("Loss")
-plt.xlabel("Epoch")
-plt.legend()
-plt.subplot(1, 2, 2)
-plt.plot(history.history["mae"], label="Train Accuracy")
-plt.plot(history.history["val_mae"], label="Validation Accuracy")
-plt.title("Model Accuracy")
-plt.ylabel("Accuracy")
-plt.xlabel("Epoch")
-plt.legend()
+# plt.figure(figsize=(10, 4))
+# plt.subplot(1, 2, 1)
+# plt.plot(history.history["val_loss"], label="Validation Loss")
+# plt.title("Model Loss")
+# plt.ylabel("Loss")
+# plt.xlabel("Epoch")
+# plt.legend()
+# plt.subplot(1, 2, 2)
+# plt.plot(history.history["mae"], label="Train Accuracy")
+# plt.plot(history.history["val_mae"], label="Validation Accuracy")
+# plt.title("Model Accuracy")
+# plt.ylabel("Accuracy")
+# plt.xlabel("Epoch")
+# plt.legend()
 
-plt.tight_layout()
-plt.show()
+# plt.tight_layout()
+# plt.show()
 
-# prety good 93% r2 score
+# # prety good 93% r2 score
