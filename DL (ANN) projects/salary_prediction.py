@@ -4,6 +4,7 @@ from keras.layers import Dense
 import matplotlib.pylab as plt
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
+import keras_tuner as kt 
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -29,12 +30,13 @@ y = df['MonthlyIncome']
 
 X_train, X_test, y_train, y_test = train_test_split( x, y, test_size=0.33, random_state=42)
 
-model = Sequential()
-model.add(Dense(256,activation='relu',input_dim= 40))
-model.add(Dense(64,activation='relu'))
-model.add(Dense(128,activation='relu'))
-model.add(Dense(32,activation='relu'))
-model.add(Dense(1,activation='linear'))
+def build_model(hp):
+    model = Sequential()
+    nodes = hp.int(32,256,steps=32)
+    activ = hp.choice('activation',values=['relu','sigmoid'])
+    model.add(Dense(units=nodes,activation=activ))
+    optimizer = hp.choice('optimizer',values=['adam','sgd'])
+    model.compile(optimizer= optimizer,loss='binary_crossentropy',matrix)
 
 print(model.summary())
 
