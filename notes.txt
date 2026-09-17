@@ -161,3 +161,18 @@ sol:
     it is the tchnique where every output from any layer is standerized meaning the 
     standart deviation is 0 and variance is 1 this will help in fast traingn 
     of a model and perform well 
+
+
+The dying ReLU problem is a training issue in neural networks where 
+Rectified Linear Unit (ReLU) neurons become permanently inactive and
+ output a constant value of zero.
+ What Causes It?
+ Zero Gradient:
+     The ReLU function outputs x if positive, and 0 if negative.
+     Its derivative is 0 for any negative input.Stuck Weights: 
+     If a large gradient update pushes a neuron's weights so that its input
+     becomes consistently negative for all training samples, it outputs 0.
+     No Recovery: Because the derivative is zero, backpropagation cannot update
+     the weights anymore, trapping the neuron in a "dead" state forever.
+     Triggers: High learning rates or large negative biases often cause this 
+     sudden drop into inactivity.
