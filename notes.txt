@@ -176,3 +176,8 @@ Rectified Linear Unit (ReLU) neurons become permanently inactive and
      the weights anymore, trapping the neuron in a "dead" state forever.
      Triggers: High learning rates or large negative biases often cause this 
      sudden drop into inactivity.
+
+9/18/2026
+
+starting CNNs
+
