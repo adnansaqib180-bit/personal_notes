@@ -28,7 +28,7 @@
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score,precision_score
 from keras.models import Sequential
-from keras.layers import Dense, Conv2D, Flatten
+from keras.layers import Dense, Conv2D, Flatten, MaxPooling2D
 from keras.datasets import mnist 
 
 import numpy as np
@@ -41,6 +41,9 @@ x_train = x_train/255
 
 model = Sequential()
 model.add(Conv2D(32, kernel_size=3, activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D(pool_size=2, strides=2, padding='valid'))
+model.add(Conv2D(64, kernel_size=3, activation='relu'))
+model.add(MaxPooling2D(pool_size=2, strides=2, padding='valid'))
 model.add(Flatten())
 model.add(Flatten(input_shape=(28,28)))
 model.add(Dense(392,activation='relu'))
