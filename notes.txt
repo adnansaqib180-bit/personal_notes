@@ -181,3 +181,16 @@ Rectified Linear Unit (ReLU) neurons become permanently inactive and
 
 starting CNNs
 
+pooling layer 
+
+it reduce the size of the image by keeping the prominrnt feature 
+
+it cares about the presence of feature not the place means feature he kahan he us se farq nhi parta is se
+se modelik hi feture ko alg treat nhi krta 
+
+due to selecting the highest number in the 
+selected area Max pooling slightly enhance the details in the image
+
+Max pulling or any other pulling is just an aggregate 
+function it does not need to be treated by its really beneficial
+
