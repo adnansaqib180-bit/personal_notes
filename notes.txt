@@ -194,3 +194,18 @@ selected area Max pooling slightly enhance the details in the image
 Max pulling or any other pulling is just an aggregate 
 function it does not need to be treated by its really beneficial
 
+today i learned back propagation in CNNs 
+in CNNs we update the value of the rweght and baise 
+
+cov2dlayers :
+as we know that only 1 filter move throuout the whole picture so 
+thats why all the gradients are add up unlike we directly use the 
+corrected weghts instead we first flipped the filter and pass the gradients (
+    corrected weghts ) through it and ten we update 
+
+
+pooling layers have no trainable parameters so they just pass the 
+gradients to the next layers 
+
+in flatten layer the output is first coverted into 3d then weghts are passes throught 
+so it can easily pass throu the convolution layers 
