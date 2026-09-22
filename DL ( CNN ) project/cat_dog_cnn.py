@@ -1,4 +1,4 @@
-import Tensorflow as tf
+import tensorflow as tf
 from keras.models import Sequential 
 from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D
 from keras.utils import image_dataset_from_directory as loader 
@@ -47,3 +47,25 @@ model.add(Flatten())
 model.add(Dense(128,activation='relu'))
 model.add(Dense(64,activation='relu'))
 model.add(Dense(1,activation='sigmoid'))
+
+model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
+history =  model.fit(train_ds,validation_data=test_ds,epochs=10)
+
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+plt.plot(history.history["loss"], label="Train Loss")
+plt.plot(history.history["val_loss"], label="Validation Loss")
+plt.title("Model Loss")
+plt.ylabel("Loss")
+plt.xlabel("Epoch")
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(history.history["accuracy"], label="Train Accuracy")
+plt.plot(history.history["val_accuracy"], label="Validation Accuracy")
+plt.title("Model Accuracy")
+plt.ylabel("Accuracy")
+plt.xlabel("Epoch")
+plt.legend()
+plt.show()
