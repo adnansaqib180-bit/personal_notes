@@ -4,7 +4,7 @@ from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D,Dropout,BatchNorma
 from keras.utils import image_dataset_from_directory as loader 
 # loading the data 
 train_ds =  loader(
-    directory = '/kaggle/input/datasets/melvinpauljacob/cat-dog-dataset/dogscats/images'
+    directory = '/kaggle/input/datasets/melvinpauljacob/cat-dog-dataset/dogscats/images',
     labels="inferred",
     label_mode="int",
     class_names=None,
