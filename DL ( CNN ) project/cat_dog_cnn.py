@@ -1,6 +1,6 @@
 import tensorflow as tf
 from keras.models import Sequential 
-from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D
+from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D,Dropout
 from keras.utils import image_dataset_from_directory as loader 
 # loading the data 
 train_ds =  loader(
@@ -45,7 +45,9 @@ model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
 model.add(Flatten())
 # adding layers 
 model.add(Dense(128,activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(64,activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(1,activation='sigmoid'))
 
 model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
