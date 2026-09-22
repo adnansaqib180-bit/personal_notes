@@ -1,6 +1,6 @@
 import tensorflow as tf
 from keras.models import Sequential 
-from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D,Dropout
+from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D,Dropout,BatchNormalization,Activation
 from keras.utils import image_dataset_from_directory as loader 
 # loading the data 
 train_ds =  loader(
@@ -33,20 +33,30 @@ test_ds = test_ds.map(process)
 # creating our CNN 
 model = Sequential()
 #frist convolution layer with max pooling 
-model.add(Conv2D(32, padding = 'valid',kernel_size = (3,3),input_shape = (256,256,3), activation='relu'))
+model.add(Conv2D(32, padding = 'valid',kernel_size = (3,3),input_shape = (256,256,3)))
+model.add(BatchNormalization())
+model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
 # secound layer
 model.add(Conv2D(64, padding='valid',activation='relu',kernel_size = (3,3)))
+model.add(BatchNormalization())
+model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
 # third layer 
 model.add(Conv2D(128, padding='valid',activation='relu',kernel_size = (3,3)))
+model.add(BatchNormalization())
+model.add(Activation('relu'))   
 model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
 # coverting to 1D so we can feed to fully connected layers 
 model.add(Flatten())
 # adding layers 
-model.add(Dense(128,activation='relu'))
+model.add(Dense(128))
+model.add(BatchNormalization())
+model.add(Activation('relu'))
 model.add(Dropout(0.3))
-model.add(Dense(64,activation='relu'))
+model.add(Dense(64))
+model.add(BatchNormalization())
+model.add(Activation('relu'))
 model.add(Dropout(0.3))
 model.add(Dense(1,activation='sigmoid'))
 
