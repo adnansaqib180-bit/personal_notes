@@ -37,23 +37,25 @@ test_ds = test_ds.map(process)
 # creating our CNN 
 model = Sequential()
 #frist convolution layer with max pooling 
-model.add(Conv2D(32, (3,3), padding="same", input_shape=(32, 32, 3), 
-                 activation="relu", data_format="channels_last"))
-# 2nd layer
-model.add(Conv2D(32, (3,3), activation="relu"))
-model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Conv2D(32, padding = 'valid',kernel_size = (3,3),input_shape = (256,256,3)))
+model.add(BatchNormalization())
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
+# secound layer
+model.add(Conv2D(32, padding='same',activation='relu',kernel_size = (3,3)),activation='relu')
 model.add(Dropout(0.25))
-#  3rd layer 
-model.add(Conv2D(64, (3,3), padding="same", activation="relu"))
-#  4th layer 
-model.add(Conv2D(64, (3,3), activation="relu"))
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.25))
+# third layer 
+model.add(Conv2D(64,activation='relu'))
+# fourth layer 
+model.add(Conv2D(128, padding='valid',activation='relu',kernel_size = (3,3)))
+model.add(BatchNormalization())
+model.add(Activation('relu'))   
+model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
 model.add(Flatten())
-# fully connected dense layers 
-model.add(Dense(512, activation="relu"))
-model.add(Dropout(0.5))
-model.add(Dense(2, activation='sigmoid'))
+# adding layers 
+model.add(Dense(256,activation='relu'))
+model.add(Dropout(0.4))
+model.add(Dense(1,activation='sigmoid'))
 
 model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
 history =  model.fit(train_ds,validation_data=test_ds,epochs=10)
