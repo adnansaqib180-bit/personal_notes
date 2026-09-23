@@ -1,3 +1,7 @@
+# Note :
+# Traing is done on kaggle because i have no GPU.
+# and the dataset is from kaggle datasets.
+ # The training data is in the form of images of cats and dogs.
 import tensorflow as tf
 from keras.models import Sequential 
 from keras.layers import Dense,Flatten , Conv2D, MaxPooling2D,Dropout,BatchNormalization,Activation
@@ -38,16 +42,15 @@ model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
 # secound layer
-model.add(Conv2D(64, padding='valid',activation='relu',kernel_size = (3,3)))
-model.add(BatchNormalization())
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
+model.add(Conv2D(32, padding='same',activation='relu',kernel_size = (3,3)),activation='relu')
+model.add(Dropout(0.25))
 # third layer 
+model.add(Conv2D(64,activation='relu'))
+# fourth layer 
 model.add(Conv2D(128, padding='valid',activation='relu',kernel_size = (3,3)))
 model.add(BatchNormalization())
 model.add(Activation('relu'))   
 model.add(MaxPooling2D(pool_size=(2,2),strides=2,padding='valid'))
-# coverting to 1D so we can feed to fully connected layers 
 model.add(Flatten())
 # adding layers 
 model.add(Dense(128))
