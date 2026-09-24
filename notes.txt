@@ -222,3 +222,14 @@ face recognistion
  missing person finder
  emotion detector 
  mask no mask 
+
+trainsfer learning 
+- feature extraction is used when pretrained model is actually trained on 
+the data you are working on eg resnet is trained on animals so if 
+you making catdog classifier you just need to train the fully connected layer 
+
+- fine tunong in fine tuning when you problem is littlebit diffrent from the 
+data where the pretrained model is traied on so you pick up some of the last conv 
+layers and retrained them for exapmle u are working on the image classifiers of 
+phone and tablet so resnet is not bassically deeply trained on tese so you uproach will be fine 
+tuning
