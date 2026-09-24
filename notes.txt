@@ -209,3 +209,16 @@ gradients to the next layers
 
 in flatten layer the output is first coverted into 3d then weghts are passes throught 
 so it can easily pass throu the convolution layers 
+
+we can also generate data means we can genterate diffrent photos from singe photo its used in the 
+cade of shortage of data 
+
+embeding is used to store the image in vector form 
+in pretrained model so if i add aan new person i donot have to train the model again 
+
+starting new project 
+
+face recognistion
+ missing person finder
+ emotion detector 
+ mask no mask 
