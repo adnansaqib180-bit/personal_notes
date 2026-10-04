@@ -233,3 +233,6 @@ data where the pretrained model is traied on so you pick up some of the last con
 layers and retrained them for exapmle u are working on the image classifiers of 
 phone and tablet so resnet is not bassically deeply trained on tese so you uproach will be fine 
 tuning
+
+
+today i started RNNs
