@@ -236,3 +236,9 @@ tuning
 
 
 today i started RNNs
+
+rnn is another type of layer wich is recurrent means in this layers the weight moves 
+forward as well as move backward which really helpfull in nlp . this provide a model an 
+abilty to remember the past input . four type of rnn one to one, one to many, many to many 
+many to one it performvery well on texual data and help to under stand 
+the hidden meaning behind the text 
