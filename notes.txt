@@ -242,3 +242,17 @@ forward as well as move backward which really helpfull in nlp . this provide a m
 abilty to remember the past input . four type of rnn one to one, one to many, many to many 
 many to one it performvery well on texual data and help to under stand 
 the hidden meaning behind the text 
+
+
+and today i ended lstm 
+
+lstm is the solution or advanced version of rnn because rnn ahve no long term memory 
+but lstm is a architechure consist od 3 gates forget gate wich is used to remove un nessery 
+info from the long term memory and the input gate it used to add  a important thing into the 
+long term memory and ouput gate to move the output forward for the next time stamp to use it
+it solve the biggest problem of the simple rnn the vanishing gradient decent 
+by mainatiang an extra information track for the long term memory 
+
+thinking to start a project 
+
+crypto prize pridictor 
