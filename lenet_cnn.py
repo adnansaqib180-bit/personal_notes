@@ -26,3 +26,8 @@ model.add(TimeDistributed(Dense(10, activation='softmax')))
 model.add(LSTM(150, activation='tanh', return_sequences=True))
 # then simply add a TimeDistributed layer to apply the Dense layer to each time step
 model.add(TimeDistributed(Dense(10, activation='softmax')))
+
+# Gru layer 
+model.add(GRU(150,activation='tanh',return_sequences=True))
+# then simply add a TimeDistributed layer to apply the Dense layer to each time step
+model.add(TimeDistributed(Dense(10, activation='softmax')))    

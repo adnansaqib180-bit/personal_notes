@@ -256,3 +256,8 @@ by mainatiang an extra information track for the long term memory
 thinking to start a project 
 
 crypto prize pridictor 
+
+today o learned about deep rnn that how we stack multiple rnns vertically to capture more deep 
+meanings from a sentenece or paragraph the output from the 
+first layer of the rrn become the input for the secoundl layer and this continious 
+as you decide the number of layer in the networl 
