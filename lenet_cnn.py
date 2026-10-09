@@ -31,3 +31,17 @@ model.add(TimeDistributed(Dense(10, activation='softmax')))
 model.add(GRU(150,activation='tanh',return_sequences=True))
 # then simply add a TimeDistributed layer to apply the Dense layer to each time step
 model.add(TimeDistributed(Dense(10, activation='softmax')))    
+
+# deep rnn
+
+model.add(SimpleRNN(150, activation='tanh', return_sequences=True))
+model.add(SimpleRNN(150, activation='tanh', return_sequences=True))
+
+# this is a deep rnn with 2 layers 
+# you can also use LSTM or GRU instead of SimpleRNN
+
+#bidirectional RNN
+
+model.add(Bidirectional(SimpleRNN(150, activation='tanh', return_sequences=True)))
+
+# again you can use LSTM or GRU instead of SimpleRNN 

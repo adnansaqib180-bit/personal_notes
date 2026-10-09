@@ -261,3 +261,16 @@ today o learned about deep rnn that how we stack multiple rnns vertically to cap
 meanings from a sentenece or paragraph the output from the 
 first layer of the rrn become the input for the secoundl layer and this continious 
 as you decide the number of layer in the networl 
+
+Today i learned about bi directional rnn which is a simple idea of using two rnn in diffrent
+directin one start reading from the start and the other will read the 
+tha data back ward and these are  really use full if you 
+are performing a task ehere a a fututre input will effect hte past like 
+name entity reconition or translation where the each word is depend on the next to catch up 
+exact meaning 
+we have also BILST and BIGRU 
+
+advantage include better performance on task like where the past input is depnedent on 
+the future one 
+and diadvantages include as we use 2 rnn s the weights increase that lead to higher trainng 
+time and some tima may cause overfitting 
