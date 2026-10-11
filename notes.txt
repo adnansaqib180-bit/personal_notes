@@ -274,3 +274,18 @@ advantage include better performance on task like where the past input is depned
 the future one 
 and diadvantages include as we use 2 rnn s the weights increase that lead to higher trainng 
 time and some tima may cause overfitting 
+
+Today i learned about encoder and decoder archetechure that was desighed for seq2seq data 
+it is the type of tdata where sequence matter in the input and sequence also matter 
+in the output 
+
+encoder nd decoder have three main parts 1 is the incoder which uses fru lstm or rnn
+inside to summerize the given input it uses deep rnn for better performence 
+the summerize input pass throug a context vector which is basically a vector to the decoder
+part the decoder is same like the encoder it also uses the same gru lstms or rnn 
+
+after passing the summerize data the first input given on the 1 time stam in the decoder 
+is always a <start> the output from this input is the first output while in trainng 
+if the first is not correct forcefully the correct input is passes from the data for faster
+and better traing this is called foce teaching after that each time stamp will produce it self 
+and the aoutput will displayed in sequence 
