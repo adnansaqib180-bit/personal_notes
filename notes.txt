@@ -289,3 +289,20 @@ is always a <start> the output from this input is the first output while in trai
 if the first is not correct forcefully the correct input is passes from the data for faster
 and better traing this is called foce teaching after that each time stamp will produce it self 
 and the aoutput will displayed in sequence 
+
+today i learned about attention mechenism it is the smart idea of finding how much is the output
+of a decoder is depending on the input of a encoder 
+as the number of words increase in the encoder decoder architecture it start forgetting 
+it to avoid it we use attention mechenism which hepl us to find the relation 
+bteween the input of encoder and output of decoder 
+
+we will assighn diffrent weights for every ouput in the encoder and named it alpha 
+and now in the input of the decoder we have to pass an extra input 
+at first it was 2 teacher forced correct input from te data and the hidden state of prevoius 
+time stamp this time we have to input 3 the two are same but we need an extra 
+which we named c which is assically the word or the input of encoder which is very usefull 
+for the output of decoder (aplha)
+to calculate alpha we pass the prevoius hidden state of the decoder and the ouput of the 
+encoder through a fuction or ANN and then we will see how much this specific alpha is 
+ important and same way we calculate all the alphas and then we will compare and the highest 
+ one will go as a input with most importance 
