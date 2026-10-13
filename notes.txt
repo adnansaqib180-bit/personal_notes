@@ -306,3 +306,24 @@ to calculate alpha we pass the prevoius hidden state of the decoder and the oupu
 encoder through a fuction or ANN and then we will see how much this specific alpha is 
  important and same way we calculate all the alphas and then we will compare and the highest 
  one will go as a input with most importance 
+
+the achitecture we dis cuss above is called bahdenaou attention after this another attention mechamism was intoriduced
+which is called loung attention and its is slightly better and more simplified 
+
+the main diffrence here is while calculating alpas we donot need to add a FNN and make it complex
+insted we just do a dot product between the current hidden (here we use the current hidden 
+state instead of prevoius one this we can work with the latest information )
+ state of the decoder and all the ouputs of 'encoder 
+this will decrease the unnessery parameters in the FNN used bahdenaou attention 
+
+the secound diffrence is that while in the first time stam or any time stamsps there will be the 
+two inputs one from the data and the hidden state we pass these inputas through lstm and after that before
+the output we concatinate the 3 input means the most importance feature of decoder the c to the output and display 
+the final output 
+
+inshot there are 3 diffrences 
+1. we donot use FNN insted we just do dot product 
+2. we calculate alphas by the current hidden state insted of prevoius ones 
+3. we concatinate the output of the ltsm cell's time stamp to the most important featureof encoder
+
+
