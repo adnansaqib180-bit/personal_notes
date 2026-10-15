@@ -326,4 +326,23 @@ inshot there are 3 diffrences
 2. we calculate alphas by the current hidden state insted of prevoius ones 
 3. we concatinate the output of the ltsm cell's time stamp to the most important featureof encoder
 
+Today iam starting transformer architecture and today i learned what is self attention 
+so to represent a natural language in the form of number as we know machines only underkstand 
+numbers we have diffrent techiniques like bag of words one hot encoding and embedding 
+while the others are outdated and inefficient exxept the embeddingit is bassically a way to represent 
+your data in set of numbers according to your data you pass you data to nural network and
+according to your ata the embedding nural network genrate embedding than could be n dimention 
+you have to decide the number of dimention usually 256 or 512 the main reason why thse are 
+popular is the are smart enough to capture symentic meaning of that word inyour data 
+i.e you have a word apple in your data and you generate 2 dim embedding for it [x,y] x for 
+fruit and y for comapny.
+although they are smart but as they are trained once and can not be retrained 
+it take the everage value means if apple in you dataa comed 9000 times in context of a fruit 
+and only 100 time in the context of a comapny you embedding generated for word apple are like 
+[0.9,0.1] as we can see the embedding thinks that most of the time the apple is 
+fruit so it will tilt toward the fruits context to solve this particular problem 
+self attention came to being it generate acually very smart embedding than the embedding technique 
+here you can imagine it as a fuction and pass the embedding inside and it will 
+provide you more smarter embedding than these ..
+
 
