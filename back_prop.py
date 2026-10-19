@@ -34,7 +34,7 @@ def softmax(num):
 
 
 
-def en(*X):
+def self_attention(*X):
     X = np.array(X)
     XT = np.transpose(X)
     XXT = np.dot(X,XT)
@@ -44,4 +44,15 @@ def en(*X):
 a = [1,2,3,4]
 b = [5,6,7,8]
 
-print(en(a,b))
+print(self_attention(a,b))
+# = softmax(KQ)V 
+def advanced_SA(*X):
+    X = np.array(X)
+    weights = np.array([[1,2,3],[2,3,4],[3,4,5]])
+    K,Q,V = np.dot(X,weights)
+    KQ = np.dot(K,Q)
+    result = np.dot(softmax(KQ),V)
+    return result 
+c = [1,2,3]
+d = [5,6,7]
+print(advanced_SA(c,d))
