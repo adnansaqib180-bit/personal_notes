@@ -1,6 +1,5 @@
 # LeNet CNN model
 import numpy as np
-# import keras_hub as kb
 from keras.models import Sequential
 from keras.layers import *
 
